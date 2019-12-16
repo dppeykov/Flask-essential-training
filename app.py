@@ -8,7 +8,6 @@ def home():
   return render_template("template-home.html") # by adding , name="X-men" in the () we can pass the value to the html template 
 
 
-
-@app.route('/about')
-def about():
-  return "This is a URL shortener"
+@app.route('/your-url')
+def your_url():
+  return render_template("template-your_url.html")
