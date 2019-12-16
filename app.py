@@ -8,8 +8,9 @@ def home():
   return render_template("template-home.html") # by adding , name="X-men" in the () we can pass the value to the html template 
 
 
-@app.route('/your-url')
+@app.route('/your-url', methods=["GET", "POST"])
 def your_url():
-  return render_template("template-your_url.html", code=request.args["code"]) 
+  if request.method == "POST":
+    return render_template("template-your_url.html", code=request.args["code"]) 
 # a get request in the template-home.html will call the your-url function and pass the code variable to the template-your_url.html
 
