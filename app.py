@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -14,5 +14,6 @@ def your_url():
     return render_template("template-your_url.html", code=request.form["code"]) 
 # a get request in the template-home.html will call the your-url function and pass the code variable to the template-your_url.html
   else:
-    return redirect("/") # redirecting the user to the homepage
+    # return redirect("/") # redirecting the user to the homepage
+    return redirect(url_for("home")) # a different way to redirect - allows the / to be changed and the code to still work - home is the name of the function in the home path
 
