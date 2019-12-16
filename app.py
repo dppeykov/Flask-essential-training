@@ -15,5 +15,6 @@ def your_url():
 # a get request in the template-home.html will call the your-url function and pass the code variable to the template-your_url.html
   else:
     # return redirect("/") # redirecting the user to the homepage
-    return redirect(url_for("home")) # a different way to redirect - allows the / to be changed and the code to still work - home is the name of the function in the home path
+    return redirect(url_for("home")) # a different way to redirect - allows the / to be changed and the code to still work - 
+    # home is the name of the function in the home route
 
