@@ -11,6 +11,8 @@ def home():
 @app.route('/your-url', methods=["GET", "POST"])
 def your_url():
   if request.method == "POST":
-    return render_template("template-your_url.html", code=request.args["code"]) 
+    return render_template("template-your_url.html", code=request.form["code"]) 
 # a get request in the template-home.html will call the your-url function and pass the code variable to the template-your_url.html
+  else:
+    return "This is not valid"
 
